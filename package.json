@@ -1,0 +1,55 @@
+{
+  "name": "tasks-list",
+  "version": "1.0.0",
+  "description": "app to add and show a list of tasks",
+  "main": "index.jsx",
+  "scripts": {
+    "start": "webpack-dev-server --mode development --open",
+    "build": "webpack --mode production",
+    "test": "npm run test",
+    "lint": "eslint src/**/*.jsx",
+    "eslint-fix": "eslint --fix \"src/**/*.jsx\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:rominanicastro/tasks-list-react.git"
+  },
+  "author": "Romina Nicastro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/rominanicastro/tasks-list-react/issues"
+  },
+  "homepage": "https://gitlab.com/rominanicastro/tasks-list-react#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.1.0",
+    "@babel/core": "^7.1.0",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.2",
+    "css-loader": "^1.0.0",
+    "dotenv-webpack": "^1.7.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "file-loader": "^5.1.0",
+    "husky": "^4.2.3",
+    "node-sass": "^4.13.1",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^0.23.0",
+    "webpack": "^4.19.1",
+    "webpack-cli": "^3.1.1",
+    "webpack-dev-server": "^3.1.8"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.8.7",
+    "prop-types": "^15.7.2",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-hot-loader": "^4.3.11",
+    "regenerator-runtime": "^0.13.5"
+  }
+}

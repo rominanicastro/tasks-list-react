@@ -1,0 +1,11 @@
+# dependencies
+/node_modules
+
+# testing
+/coverage
+
+# production
+/dist
+
+# misc
+# .env file should be here but it is commented just for this example 

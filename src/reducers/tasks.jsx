@@ -1,15 +1,14 @@
-import { SAVE_TASKS, FETCH_TASKS } from '../actions/types';
+import { SAVE_TASK, FETCH_TASKS } from '../actions/types';
 
-const INITIAL_STATE = [
-  'First task to complete',
-];
+const INITIAL_STATE = [];
 // set a default value for state parameter
 export default function (state = INITIAL_STATE, action) {
   switch (action.type) {
-    case SAVE_TASKS:
+    case SAVE_TASK:
       return [...state, action.payload];
     case FETCH_TASKS:
-      const tasks = action.payload.data.map((task) => task.name);
+      // eslint-disable-next-line no-case-declarations
+      const tasks = action.payload && action.payload.map((task) => task);
       return [...state, ...tasks];
     default:
       return state;

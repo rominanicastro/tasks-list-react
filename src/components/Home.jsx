@@ -1,16 +1,26 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import TaskForm from './TaskForm';
+import * as actions from '../actions';
 
 class Home extends Component {
+  constructor(props) {
+    super(props);
+    const { fetchTasks } = this.props;
+    fetchTasks();
+  }
+
   renderComments() {
     const { tasks } = this.props;
-    return tasks.map((task) => (<li key={task}>{task}</li>));
+    // eslint-disable-next-line react/no-array-index-key
+    return tasks.map((task, index) => (<li key={index}>{task}</li>));
   }
 
   render() {
     return (
       <div>
+        <TaskForm />
         <h4>Tasks List: </h4>
         <ul>
           {this.renderComments()}
@@ -26,6 +36,7 @@ function mapStateToProps(state) {
 
 Home.propTypes = {
   tasks: PropTypes.arrayOf(PropTypes.string).isRequired,
+  fetchTasks: PropTypes.func.isRequired,
 };
 
-export default connect(mapStateToProps)(Home);
+export default connect(mapStateToProps, actions)(Home);

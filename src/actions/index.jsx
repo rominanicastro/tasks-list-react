@@ -1,17 +1,23 @@
-import { SAVE_TASKS, FETCH_TASKS } from './types';
+import { SAVE_TASK, FETCH_TASKS } from './types';
 
-export function saveComment(task) {
-  return {
-    type: SAVE_TASKS,
-    payload: task,
-  };
-}
+export const saveTask = (task) => async (dispatch) => {
+  dispatch({ type: SAVE_TASK, payload: task });
+  let tasksArray = [];
+  const listJSON = localStorage.getItem('tasks');
+  if (listJSON !== null) {
+    const list = JSON.parse(listJSON);
+    tasksArray = list;
+  }
+  tasksArray = tasksArray.concat(task);
+  localStorage.setItem('tasks', JSON.stringify(tasksArray));
+};
 
-export function fetchComments() {
+export function fetchTasks() {
   const response = localStorage.getItem('tasks');
+  const tasksList = JSON.parse(response);
 
   return {
     type: FETCH_TASKS,
-    payload: response,
+    payload: tasksList,
   };
 }

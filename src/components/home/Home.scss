@@ -1,0 +1,83 @@
+// variables 
+$light-grey: #605e5e;
+$grey: #333;
+$white: #fff;
+$green: #4fae4f;
+$red: #cc0c0ceb;
+
+.container {
+    width: 90%;
+    margin: 60px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.title {
+    line-height: 1.2;
+    font-weight: 500;
+    font-size: 40px;
+    color: $grey;
+}
+
+.tasks-list {
+    margin: 20px 0;
+    width: 100%;
+    max-width: 450px;
+
+    .tasks-list__title {
+        text-align: center;
+        font-size: 25px;
+        font-weight: 400;
+        color: $light-grey;
+    }
+
+    .tasks-list__list {
+        list-style-type: none;
+        padding-left: 0;
+        color: #605e5e;
+    }
+}
+
+.tasks-list__element {
+    margin: 10px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    button {
+        margin-left: 20px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.tasks-list__btn {
+    border-radius: 14px;
+    padding: 12px 22px;
+    line-height: .67;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    color: $white;
+    transition: box-shadow .4s;
+    text-decoration: none;
+    border: none;
+
+    &:hover,
+    &:focus {
+        box-shadow: 0 3px 6px 0 $grey;
+        text-decoration: none;
+    }
+}
+
+.tasks-list__btn--resolve {
+    background-color: $green;
+}
+
+
+.tasks-list__btn--remove {
+    background-color: $red;
+}

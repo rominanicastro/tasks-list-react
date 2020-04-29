@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import TaskForm from './TaskForm';
-import * as actions from '../actions';
+import TaskForm from '../taskForm/TaskForm';
+import * as actions from '../../actions';
+import './Home.scss';
 
 class Home extends Component {
   constructor(props) {
@@ -21,22 +22,28 @@ class Home extends Component {
     const { tasks } = this.props;
     return tasks.map((task, index) => (
       // eslint-disable-next-line react/no-array-index-key
-      <li key={index}>
-        {task}
-        <button type="button" value={task} className="" onClick={this.handleRemove}>Remove</button>
-        <button type="button" className="" onClick={this.handleRemove}>Resolve</button>
+      <li key={index} className="tasks-list__element">
+        <span>{task}</span>
+        <div>
+          <button type="button" value={task} className="tasks-list__btn tasks-list__btn--resolve" onClick={this.handleRemove}>Resolve</button>
+          <button type="button" value={task} className="tasks-list__btn tasks-list__btn--remove" onClick={this.handleRemove}>Remove</button>
+        </div>
       </li>
     ));
   }
 
   render() {
     return (
-      <div>
+      <div className="container">
+        <h1 className="title">Interactive list</h1>
         <TaskForm />
-        <h4>Tasks List: </h4>
-        <ul>
-          {this.renderComments()}
-        </ul>
+        {/* This logic can be placed in other component in order to make the code nicer */}
+        <div className="tasks-list">
+          <h4 className="tasks-list__title">Tasks List: </h4>
+          <ul className="tasks-list__list">
+            {this.renderComments()}
+          </ul>
+        </div>
       </div>
     );
   }

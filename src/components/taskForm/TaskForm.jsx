@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import * as actions from '../actions';
+import * as actions from '../../actions';
+import './TaskForm.scss';
+import Button from '../button/Button';
 
 class TaskForm extends Component {
   constructor(props) {
     super(props);
-    this.state = { task: '' };
+    this.state = { task: '', disabled: true };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event) {
     // re render the component. This action is async
-    this.setState({ task: event.target.value });
+    this.setState({ task: event.target.value, disabled: false });
   }
 
   handleSubmit(event) {
@@ -28,15 +30,12 @@ class TaskForm extends Component {
   }
 
   render() {
-    const { task } = this.state;
+    const { task, disabled } = this.state;
     return (
       <div className="task-form">
-        <form onSubmit={this.handleSubmit}>
-          <h4>Add a task</h4>
-          <textarea className="task-form__textarea" onChange={this.handleChange} value={task} />
-          <div>
-            <button type="submit">Submit</button>
-          </div>
+        <form className="task-form__form" onSubmit={this.handleSubmit}>
+          <input className="task-form__input" onChange={this.handleChange} value={task} />
+          <Button disabled={disabled} type="submit">Add</Button>
         </form>
       </div>
     );

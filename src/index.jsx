@@ -8,7 +8,7 @@ import reduxThunk from 'redux-thunk';
 import reducers from './reducers';
 
 import App from './App';
-import Home from './components/Home';
+import Home from './components/home/Home';
 
 const store = createStore(
   reducers,

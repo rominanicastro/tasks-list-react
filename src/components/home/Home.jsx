@@ -62,7 +62,6 @@ class Home extends Component {
       <div className="container">
         <h1 className="title">Interactive list</h1>
         <TaskForm />
-        {/* This logic can be placed in other component in order to make the code nicer */}
         <div className="tasks-list">
           <div className="task-list__buttons">
             <button type="button" value="all" onClick={this.updateStateFilter} className="tasks-list__btn tasks-list__all">All</button>

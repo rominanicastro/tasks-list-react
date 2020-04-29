@@ -1,7 +1,15 @@
-import { SAVE_TASK, FETCH_TASKS, REMOVE_TASK } from '../actions/types';
+import {
+  SAVE_TASK, FETCH_TASKS, UPDATE_TASK,
+} from '../actions/types';
 
-const INITIAL_STATE = [];
 // set a default value for state parameter
+const INITIAL_STATE = [
+  {
+    taskName: '',
+    state: '',
+  },
+];
+
 export default function (state = INITIAL_STATE, action) {
   switch (action.type) {
     case SAVE_TASK:
@@ -10,8 +18,14 @@ export default function (state = INITIAL_STATE, action) {
       // eslint-disable-next-line no-case-declarations
       const tasks = action.payload && action.payload.map((task) => task);
       return [...state, ...tasks];
-    case REMOVE_TASK:
-      return [...state.filter((task) => task !== action.payload)];
+    case UPDATE_TASK:
+      return [...state.map((task) => {
+        if (task.taskName === action.payload.taskName) {
+          // eslint-disable-next-line no-param-reassign
+          task.state = action.payload.state;
+        }
+        return task;
+      })];
     default:
       return state;
   }

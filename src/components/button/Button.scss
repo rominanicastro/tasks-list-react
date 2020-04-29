@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto");
+@import '../../Variables.scss';
 
 html {
   height: 100%;
@@ -23,7 +24,7 @@ body {
   position: relative;
   font-family: "Roboto";
   text-transform: uppercase;
-  color: #503af6;
+  color: $light-blue;
   letter-spacing: 0.5px;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -35,10 +36,10 @@ body {
 }
 
 .more-bt {
-  border-right: 2px solid #503af6;
-  border-bottom: 2px solid #503af6;
+  border-right: 2px solid $light-blue;
+  border-bottom: 2px solid $light-blue;
   padding: 13px 29px 12px 31px;
-  border-color: #503af6;
+  border-color: $light-blue;
 }
 
 .more-bt p {
@@ -61,7 +62,7 @@ body {
 .more-bt:before {
   content: " ";
   display: block;
-  background: #503af6;
+  background: $light-blue;
   position: absolute;
   -webkit-transition: 0.5s;
   transition: 0.5s;
@@ -80,7 +81,7 @@ body {
 .more-bt:before {
   content: " ";
   display: block;
-  background: #503af6;
+  background: $light-blue;
   position: absolute;
   -webkit-transition: 0.5s;
   transition: 0.5s;
@@ -88,8 +89,8 @@ body {
 }
 
 ::selection {
-  background: #503af6;
-  color: #ffffff;
+  background: $light-blue;
+  color: $white;
   text-shadow: none;
 }
 
@@ -105,7 +106,7 @@ body {
 .more-bt:before {
   content: " ";
   display: block;
-  background: #503af6;
+  background: $light-blue;
   position: absolute;
   -webkit-transition: 0.5s;
   transition: 0.5s;
@@ -119,7 +120,7 @@ body {
   height: 100%;
   width: 0;
   z-index: 2;
-  background: #503af6;
+  background: $light-blue;
   top: 0;
   -webkit-transition: 0.5s;
   transition: 0.5s;
@@ -134,7 +135,7 @@ body {
   height: 100%;
   width: 0;
   z-index: 2;
-  background: #503af6;
+  background: $light-blue;
   top: 0;
   -webkit-transition: 0.5s;
   transition: 0.5s;
@@ -144,7 +145,7 @@ body {
 
 .more-bt .sfl {
   z-index: 1;
-  background: #4431d1;
+  background: $blue;
   -webkit-transition: 0.7s;
   transition: 0.7s;
 }
@@ -177,7 +178,7 @@ body {
 .more-bt .cross:before,
 .more-bt .cross:after {
   content: " ";
-  background: #fff;
+  background: $white;
   display: block;
   position: absolute;
   opacity: 0;
@@ -204,7 +205,7 @@ body {
 .more-bt .cross:before,
 .more-bt .cross:after {
   content: " ";
-  background: #fff;
+  background: $white;
   display: block;
   position: absolute;
   opacity: 0;
@@ -238,7 +239,7 @@ body {
   display: block;
   width: 2px;
   height: 20px;
-  background: #503af6;
+  background: $light-blue;
   position: absolute;
   margin: -10px -1px;
   left: 50%;
@@ -251,7 +252,7 @@ body {
   display: block;
   width: 2px;
   height: 20px;
-  background: #503af6;
+  background: $light-blue;
   position: absolute;
   margin: 0px -1px;
   left: 50%;
@@ -263,7 +264,7 @@ body {
   display: block;
   width: 2px;
   height: 20px;
-  background: #503af6;
+  background: $light-blue;
   position: absolute;
   margin: -10px 0px -10px 8px;
   left: 50%;
@@ -312,7 +313,7 @@ body {
   height: 100%;
   width: 0;
   z-index: 2;
-  background: #503af6;
+  background: $light-blue;
   top: 0;
   -webkit-transition: 0.5s;
   transition: 0.5s;
@@ -337,7 +338,7 @@ body {
 
 .more-bt .sfl {
   z-index: 1;
-  background: #4431d1;
+  background: $blue;
   -webkit-transition: 0.7s;
   transition: 0.7s;
 }
@@ -386,7 +387,7 @@ body {
 .more-bt .cross:before,
 .more-bt .cross:after {
   content: " ";
-  background: #fff;
+  background: $white;
   display: block;
   position: absolute;
   opacity: 0;
@@ -417,5 +418,5 @@ body {
 }
 
 .bt.more-bt:disabled {
-  background: #d3d3d3;
+  background: $grey-button;
 }
